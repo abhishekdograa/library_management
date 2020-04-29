@@ -3,6 +3,7 @@ const app = express();
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const path = require("path");
 var cors = require('cors');
 
 const productRoutes = require("./api/routes/products");
@@ -39,6 +40,16 @@ app.use("/orders", orderRoutes);
 app.use("/users", userRoutes);
 // app.use("/projects", projectRoutes);
 app.use("/mentors", mentorRoutes);
+
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('frontend/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  });
+}
+
 app.use((req, res, next) => {
   const error = new Error("Not found");
   error.status = 404;

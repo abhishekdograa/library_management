@@ -117,7 +117,7 @@ router.patch("/:mentorId",checkAuth, (req, res, next) => {
   //   updateOps[ops.propName] = ops.value;
   // }
   console.log(req.body.Mentor.name);
-  Product.update({ _id: id }, { $set:{ name: req.body.Mentor.name, Company: req.body.Mentor.Company, Designation: req.body.Mentor.Designation, Specialization: req.body.Mentor.Specialization } })
+  Mentor.update({ _id: id }, { $set:{ name: req.body.Mentor.name, Company: req.body.Mentor.Company, Designation: req.body.Mentor.Designation, Specialization: req.body.Mentor.Specialization } })
     .exec()
     .then(result => {
       console.log(result);
@@ -141,11 +141,11 @@ router.patch("/:mentorId",checkAuth, (req, res, next) => {
 
 router.delete("/:mentorId",checkAuth, (req, res, next) => {
   
-  const id = req.params.productId;
+  const id = req.params.mentorId;
   console.log(id);
-  Product.remove({ _id: id })
+  Mentor.remove({ _id: id })
     .exec()
-    .then(response=> {
+    .then( response => {
       res.status(200).json({
         message: 'Mentor deleted',
         request:{
