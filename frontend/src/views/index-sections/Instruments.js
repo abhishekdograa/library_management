@@ -42,7 +42,7 @@ import {
       auth = ""
     }
     useEffect(() => {
-      axios.get('http://localhost:3000/products')
+      axios.get('http://localhost:5000/products')
     .then(res =>{
       console.log(res);
       SetInstr(res.data.products);

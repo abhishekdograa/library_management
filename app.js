@@ -39,7 +39,7 @@ app.use("/products", productRoutes);
 app.use("/orders", orderRoutes);
 app.use("/users", userRoutes);
 // app.use("/projects", projectRoutes);
-app.use("/mentors", mentorRoutes);
+app.use("/ourmentors", mentorRoutes);
 
 if (process.env.NODE_ENV === 'production') {
   // Set static folder

@@ -30,7 +30,7 @@ import {
     });
     const [Instr, SetInstr] = useState([]);
     useEffect(() => {
-      axios.get('http://localhost:3000/products')
+      axios.get('http://localhost:5000/products')
     .then(res =>{
       console.log(res);
       SetInstr(res.data.products);
@@ -67,7 +67,7 @@ import {
                   <Card style={{width: '15rem'}}>
     <CardImg top src={require("assets/img/L293D-Motor-DriverServo-Shield-for-Arduino-3.jpg")} alt="..."/>
     <CardBody>
-    <CardTitle>  <b> {inst.name} </b> </CardTitle>
+    <CardTitle key ={inst.id}>  <b> {inst.name} </b> </CardTitle>
                    <CardText>{inst.description}</CardText>
         <Button color="primary" href="/profile-page">See More</Button>
         
