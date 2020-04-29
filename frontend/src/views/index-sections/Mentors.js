@@ -1,7 +1,4 @@
 
-// We would like to thank our mentors for always being there for us and guiding us in the right direction. Our mentors are leaders, innovators and visionnaire from all fields of technology and from all walks of life, constantly sharing their experience and knowledge with our team.
-// reactstrap components
-
 import React, { useState, useEffect } from "react";
 
 import {
@@ -21,9 +18,8 @@ import {
   import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
   import MentorHeader from "components/Headers/MentorHeader.js";
   import DemoFooter from "components/Footers/DemoFooter.js";
-  // import IndexNavbar from "components/Navbars/IndexNavbar";
   
-  function Instruments() {
+  function Mentors() {
     document.documentElement.classList.remove("nav-open");
     React.useEffect(() => {
       document.body.classList.add("profile-page");
@@ -97,5 +93,5 @@ import {
   }
   
   
-  export default Instruments;
+  export default Mentors;
   
