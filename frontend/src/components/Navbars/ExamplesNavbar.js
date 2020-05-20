@@ -18,11 +18,16 @@ import {
   DropdownItem,
   DropdownMenu
 } from "reactstrap";
+let Token= sessionStorage.getItem("TokenKey");
 
 function ExamplesNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [navbarCollapse, setNavbarCollapse] = React.useState(false);
-
+  let auth ="none";
+    if(Token)
+    {
+      auth = "";
+    }
   const toggleNavbarCollapse = () => {
     setNavbarCollapse(!navbarCollapse);
     document.documentElement.classList.toggle("nav-open");
@@ -105,6 +110,11 @@ function ExamplesNavbar() {
                     <NavItem>
                       <NavLink href="/login">
                          Login
+                      </NavLink>
+                    </NavItem>
+                    <NavItem  style={{display: auth}} >
+                      <NavLink href="/Cart">
+                         Cart
                       </NavLink>
                     </NavItem>
                     <UncontrolledDropdown nav inNavbar>

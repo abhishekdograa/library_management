@@ -1,21 +1,4 @@
-/*!
 
-=========================================================
-* Paper Kit React - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-kit-react
-
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/paper-kit-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
@@ -34,6 +17,7 @@ import Mentors from "views/index-sections/Mentors"
 import Projects from "views/index-sections/Projects";
 import Instruments from "views/index-sections/Instruments";
 import Login from "views/index-sections/Login"
+import Cart from "views/index-sections/Cart"
 // others
 
 ReactDOM.render(
@@ -73,6 +57,11 @@ ReactDOM.render(
         path="/login"
         
         render={props => <Login {...props} />}
+      />
+       <Route
+        path="/Cart"
+        
+        render={props => <Cart {...props} />}
       />
       {/* <Route
         path="/instruments"

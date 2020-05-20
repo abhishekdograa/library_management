@@ -5,10 +5,8 @@ import {
     Button,
     Card,
     CardBody,
-    Modal, ModalHeader, ModalBody, ModalFooter,
     CardTitle,
     Input,
-    InputGroupAddon,
     InputGroup,
     Container,
     Row,
@@ -24,7 +22,7 @@ import {
   import DemoFooter from "components/Footers/DemoFooter.js";
   // import IndexNavbar from "components/Navbars/IndexNavbar";
   let Token= sessionStorage.getItem("TokenKey");
-
+  var cart = [];
   function Instruments() {
     document.documentElement.classList.remove("nav-open");
     React.useEffect(() => {
@@ -55,6 +53,11 @@ import {
     );
     const toggle =()=> setModal(!modal);
     
+    const HandleCart =(e)=>{
+      setModal(!modal);
+      cart.push(e.target.value);
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
     
     return (
      
@@ -64,7 +67,6 @@ import {
         <InstrumentHeader />
         <div className="main">
           <div className="section text-center">
-         {console.log(search)}
             <Container>
               <Row>
                 <Col className="ml-auto mr-auto" md="8">
@@ -75,9 +77,6 @@ import {
                   <br />
                 </Col>
                 <InputGroup>
-                <InputGroupAddon >
-                {/* <InputGroupText>?</InputGroupText> */}
-                </InputGroupAddon>
                 <Input value={search} style={{textAlign:"center"}} placeholder="Can I help you Find Something ?" onChange={e =>{SetSearch(e.target.value)}}/>
                 </InputGroup>
                 </Row>
@@ -86,28 +85,17 @@ import {
               <Container>
               <Row>
                    {searchinstr.map(inst =>(
-                <Col md="3">
+                <Col key ={inst._id} md="3">
                   <div className="info">
                      <Card style={{width: '15rem'}}>
                      <CardImg top src={require("assets/img/L293D-Motor-DriverServo-Shield-for-Arduino-3.jpg")} alt="..."/>
                        <CardBody>
                         <CardTitle>  <b> {inst.name} </b> </CardTitle>
                         <CardText>{inst.quantity}</CardText>
-                        <Button color="primary"  onClick ={toggle}> See More</Button> 
-                        <Modal isOpen={modal} toggle={toggle}>
-                   <ModalHeader toggle={toggle}>{inst.name}</ModalHeader>
-                          <ModalBody>
-                            Quantity: {inst.quantity}
-                          </ModalBody>
-                          <ModalBody>
-                          {inst.description}
-                          </ModalBody>
-                          <ModalFooter>
-                            <Button color="primary" onClick={toggle}  style={{display: auth}} >Issue</Button>
-                            <Button color="secondary" onClick={toggle} style={{display: auth}} >Edit</Button>
-                            <Button color="secondary" onClick={toggle} style={{display: auth}} >Delete</Button>
-                          </ModalFooter>
-                        </Modal>
+                        <CardText>{inst.description}</CardText>
+                        <Button outline size ="sm" color="primary" onClick={HandleCart} value={inst._id} style={{display: auth}} >Cart</Button>
+                        <Button outline size ="sm" color="primary" onClick={toggle} style={{display: auth}} >Edit</Button>
+                        <Button outline size ="sm" color="primary"  onClick={toggle} style={{display: auth}} >Delete</Button>
                      </CardBody>
                      </Card>                    
                   </div>
