@@ -8,6 +8,7 @@ import classnames from "classnames";
 import {
   Collapse,
   NavbarBrand,
+  NavbarToggler,
   Navbar,
   NavItem,
   NavLink,
@@ -71,15 +72,18 @@ function ExamplesNavbar() {
           >
             Robotics Lab UIET
           </NavbarBrand>
+          
           <button
             aria-expanded={navbarCollapse}
             className={classnames("navbar-toggler navbar-toggler", {
               toggled: navbarCollapse
             })}
             onClick={toggleNavbarCollapse}
+            
           >
-           
+            <NavbarToggler className="mr-2"><h7 style={{color:"white" } }>MORE</h7></NavbarToggler>
           </button>
+         
         </div>
         <Collapse
           className="justify-content-end"
