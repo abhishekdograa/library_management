@@ -29,7 +29,7 @@ import {
     });
     const [Mentor, SetMentor] = useState([]);
     useEffect(() => {
-      axios.get('http://tranquil-fortress-57962.herokuapp.com/mentors')
+      axios.get('https://tranquil-fortress-57962.herokuapp.com/mentors')
     .then(res =>{
       console.log(res);
       SetMentor(res.data.mentors);

@@ -21,7 +21,7 @@ function LoginPage() {
  
     axios({
         method: 'post',
-        url: "http://tranquil-fortress-57962.herokuapp.com/users/login/",
+        url: "https://tranquil-fortress-57962.herokuapp.com/users/login/",
         headers: {}, 
         data: {
             email: email,
