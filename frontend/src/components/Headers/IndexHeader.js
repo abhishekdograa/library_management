@@ -42,7 +42,7 @@ function IndexHeader() {
           }}
         />
         <h6 className="category category-absolute">
-          Created By - Manik Malik & Ashutosh Bhatia{" "}
+          Created By - Manik Malik {" "}
         </h6>
       </div>
     </>
