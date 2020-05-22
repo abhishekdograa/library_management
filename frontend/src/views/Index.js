@@ -7,7 +7,6 @@ import React from "react";
 import IndexHeader from "components/Headers/IndexHeader.js";
 // import DemoFooter from "components/Footers/DemoFooter.js";
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
-
 // index sections
 // import SectionButtons from "views/index-sections/SectionButtons.js";
 // import SectionNavbars from "views/index-sections/SectionNavbars.js";
@@ -33,10 +32,10 @@ function Index() {
   });
   return (
     <>
-      {/* <IndexNavbar /> */}
+      <div className="w3-container w3-card">
       <ExamplesNavbar />
       <IndexHeader />
-
+      </div>
     </>
   );
 }

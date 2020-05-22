@@ -8,6 +8,22 @@ import { Container } from "reactstrap";
 // core components
 
 function IndexHeader() {
+  // let pageHeader = React.createRef();
+
+  // React.useEffect(() => {
+  //   if (window.innerWidth < 991) {
+  //     const updateScroll = () => {
+  //       let windowScrollTop = window.pageYOffset / 3;
+  //       pageHeader.current.style.transform =
+  //         "translate3d(0," + windowScrollTop + "px,0)";
+  //     };
+  //     window.addEventListener("scroll", updateScroll);
+  //     return function cleanup() {
+  //       window.removeEventListener("scroll", updateScroll);
+  //     };
+  //   }
+  // });
+
   return (
     <>
       <div
@@ -21,7 +37,7 @@ function IndexHeader() {
         <div className="content-center">
           <Container>
             <div className="title-brand">
-              <h1 className="presentation-title">Robotics Lab UIET</h1>
+              <h1 style = {{fontSize:"8vw"}} className="presentation-title w3-container">Robotics Lab UIET</h1>
               {/* <div className="fog-low">
                 <img alt="..." src={require("assets/img/fog-low.png")} />
               </div> */}
@@ -29,10 +45,13 @@ function IndexHeader() {
                 <img alt="..." src={require("assets/img/fog-low.png")} />
               </div> */}
             </div>
-            <h2 className="presentation-subtitle text-center">
+            <p style = {{fontSize:"2vw"}} className="presentation-subtitle text-center">
               Dreams Are Not That You See While Asleep
-              Dreams Are Those Who Can't Let You Sleep
-            </h2>
+            </p>
+            <p style = {{fontSize:"2vw"}} className="presentation-subtitle text-center">
+            Dreams Are Those Who Can't Let You Sleep
+            </p>
+            
           </Container>
         </div>
         <div

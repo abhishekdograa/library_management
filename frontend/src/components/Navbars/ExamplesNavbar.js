@@ -81,7 +81,7 @@ function ExamplesNavbar() {
             onClick={toggleNavbarCollapse}
             
           >
-            <NavbarToggler className="mr-2"><h7 style={{color:"white" } }>MORE</h7></NavbarToggler>
+            <NavbarToggler className="mr-2"><p style={{color:"white" } }><b>MORE</b></p></NavbarToggler>
           </button>
          
         </div>
