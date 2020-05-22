@@ -40,7 +40,7 @@ import {
       auth = ""
     }
     useEffect(() => {
-      axios.get('http://localhost:5000/products')
+      axios.get('http://tranquil-fortress-57962.herokuapp.com/products')
     .then(res =>{
       console.log(res);
       SetInstr(res.data.products);

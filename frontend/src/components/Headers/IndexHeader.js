@@ -46,12 +46,9 @@ function IndexHeader() {
               </div> */}
             </div>
             <p style = {{fontSize:"2vw"}} className="presentation-subtitle text-center">
-              Dreams Are Not That You See While Asleep
+              Dreams Are Not That You See While Asleep<br/>Dreams Are Those Who Can't Let You Sleep
+              
             </p>
-            <p style = {{fontSize:"2vw"}} className="presentation-subtitle text-center">
-            Dreams Are Those Who Can't Let You Sleep
-            </p>
-            
           </Container>
         </div>
         <div

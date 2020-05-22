@@ -20,7 +20,7 @@ router.get("/", (req, res, next) => {
             Specialization : doc.Specialization,
             request: {
               type: 'GET',
-              url: 'http://localhost:5000/mentors/'+ doc._id
+              url: 'http://tranquil-fortress-57962.herokuapp.com/mentors/'+ doc._id
             }
           }
         })
@@ -65,7 +65,7 @@ router.post("/", checkAuth, (req, res, next) => {
 
           request: {
             type: 'GET',
-            url:  'http://localhost:5000/mentors/'+ result._id
+            url:  'http://tranquil-fortress-57962.herokuapp.com/mentors/'+ result._id
           }
         }
       });
@@ -126,7 +126,7 @@ router.patch("/:mentorId",checkAuth, (req, res, next) => {
         message: 'Mentor Info updated',
         request: {
           type: 'GET',
-          url: "http://localhost:5000/ourmentors/"+ id,
+          url: "http://tranquil-fortress-57962.herokuapp.com/ourmentors/"+ id,
         }
       });
     })
@@ -150,7 +150,7 @@ router.delete("/:mentorId",checkAuth, (req, res, next) => {
         message: 'Mentor deleted',
         request:{
           type: 'POST',
-          url: 'http://localhost:5000/mentors',
+          url: 'http://tranquil-fortress-57962.herokuapp.com/mentors',
           body: {name: 'String', quantity: 'Number'}
         }
       }

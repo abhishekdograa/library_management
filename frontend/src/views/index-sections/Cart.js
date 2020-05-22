@@ -25,7 +25,7 @@ import React,{useState} from "react";
     const [carting, setCarting] = useState([]);
     
     // useEffect(() => {
-    //   axios.get('http://localhost:5000/products')
+    //   axios.get('http://tranquil-fortress-57962.herokuapp.com/products')
     // .then(res =>{
     //   console.log(res);
     //   SetInstr(res.data.products);
@@ -33,7 +33,7 @@ import React,{useState} from "react";
     // }, [])
     if (decision){
     cart.forEach(element => {
-            axios.get('http://localhost:5000/products/'+element)
+            axios.get('http://tranquil-fortress-57962.herokuapp.com/products/'+element)
             .then(res =>{
                instr.push(res.data) 
             })
