@@ -54,9 +54,7 @@ import {
     const toggle =()=> setModal(!modal);
     
     const HandleCart =(e)=>{
-      setModal(!modal);
-      cart.push(e.target.value);
-      localStorage.setItem("cart", JSON.stringify(cart));
+    alert(e.target.value);
     }
     
     return (
